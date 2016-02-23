@@ -1,0 +1,340 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>telescope &mdash; Radio Telescope 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="Radio Telescope 0.0.1 documentation" href="../index.html"/>
+        <link rel="up" title="Module code" href="index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Radio Telescope
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="simple">
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Radio Telescope</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="index.html">Module code</a> &raquo;</li>
+      
+    <li>telescope</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for telescope</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">astropy.time</span> <span class="kn">import</span> <span class="n">Time</span>
+<span class="kn">from</span> <span class="nn">astropy.coordinates</span> <span class="kn">import</span> <span class="n">SkyCoord</span>
+
+<div class="viewcode-block" id="Telescope"><a class="viewcode-back" href="../index.html#telescope.Telescope">[docs]</a><span class="k">class</span> <span class="nc">Telescope</span><span class="p">:</span>
+
+	<span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">observer</span><span class="p">):</span>
+		<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">		Initialize self with and observer object #and a park location</span>
+
+<span class="sd">		Parameters</span>
+<span class="sd">		---------</span>
+<span class="sd">		observer : `~astroplan.Observer`</span>
+<span class="sd">			Information about the location of the telescope</span>
+
+<span class="sd">		#park : `~astropy.coordinates.AltAz</span>
+<span class="sd">		#	Park location for the telescope</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">Observer</span> <span class="o">=</span> <span class="n">observer</span>
+		<span class="c1">#self.park = park			# TODO: Figure this out</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">tracking</span> <span class="o">=</span> <span class="bp">False</span>
+
+
+<div class="viewcode-block" id="Telescope.getTime"><a class="viewcode-back" href="../index.html#telescope.Telescope.getTime">[docs]</a>	<span class="k">def</span> <span class="nf">getTime</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">		Return a `astropy.time.Time` time object with a `datetime` format</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+		<span class="k">return</span> <span class="n">Time</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="Telescope.printTelescope"><a class="viewcode-back" href="../index.html#telescope.Telescope.printTelescope">[docs]</a>	<span class="k">def</span> <span class="nf">printTelescope</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+		<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">		Print information about the telescope to the screen</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+		<span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Observer</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+		<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Latitude: </span><span class="si">%s</span><span class="se">\t</span><span class="s2">Longitude: </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">Observer</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> 
+				<span class="bp">self</span><span class="o">.</span><span class="n">Observer</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">longitude</span><span class="p">))</span>
+		<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Current time is </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getTime</span><span class="p">()))</span></div>
+		<span class="c1">#print(&quot;Telescope park location: %s, %s&quot; %(self.park.az, self.park.alt))</span>
+
+
+<div class="viewcode-block" id="Telescope.slewToCoord"><a class="viewcode-back" href="../index.html#telescope.Telescope.slewToCoord">[docs]</a>	<span class="k">def</span> <span class="nf">slewToCoord</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">,</span> <span class="n">time</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+		<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">		Slew the telescope to a given AltAz </span>
+
+<span class="sd">		Parameters</span>
+<span class="sd">		----------</span>
+<span class="sd">		ra : float</span>
+<span class="sd">			Right Ascension in degrees</span>
+
+<span class="sd">		dec : float</span>
+<span class="sd">			Declination in degrees</span>
+<span class="sd">	</span>
+<span class="sd">		time : `~astropy.time.Time` (optional)</span>
+<span class="sd">			Time of the observation. If left blank, it will default to</span>
+<span class="sd">			the current time.</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+		<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Slewing to RA: </span><span class="si">%s</span><span class="s2">, Dec: </span><span class="si">%s</span><span class="s2">...&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">))</span>
+
+		<span class="c1"># check if the coordinates are above the horizon</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">time</span><span class="p">:</span> <span class="n">time</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">getTime</span><span class="p">()</span>
+		<span class="n">coord</span> <span class="o">=</span> <span class="n">SkyCoord</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">)</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">Observer</span><span class="o">.</span><span class="n">target_is_up</span><span class="p">(</span><span class="n">time</span><span class="p">,</span> <span class="n">coord</span><span class="p">):</span>
+			<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Target RA: </span><span class="si">%s</span><span class="s2">, Dec: </span><span class="si">%s</span><span class="s2"> is below the horizon.&quot;</span><span class="p">)</span>
+			<span class="k">return</span>
+
+<span class="c1">#		call to C++ code goes here</span>
+
+		<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Finished slewing to RA: </span><span class="si">%s</span><span class="s2">, Dec: </span><span class="si">%s</span><span class="s2">.&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">ra</span><span class="p">,</span> <span class="n">dec</span><span class="p">))</span></div>
+
+
+<div class="viewcode-block" id="Telescope.slewToObject"><a class="viewcode-back" href="../index.html#telescope.Telescope.slewToObject">[docs]</a>	<span class="k">def</span> <span class="nf">slewToObject</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+		<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">		Slew the telescope to an object</span>
+
+<span class="sd">		Parameters</span>
+<span class="sd">		----------</span>
+<span class="sd">		obj : `~astroplan.FixedTarget`</span>
+<span class="sd">			Object to observe</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+		<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Slewing to </span><span class="si">%s</span><span class="s2">...&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">slewToCoord</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">ra</span><span class="p">,</span> <span class="n">obj</span><span class="o">.</span><span class="n">dec</span><span class="p">)</span></div>
+
+	
+<div class="viewcode-block" id="Telescope.trackObject"><a class="viewcode-back" href="../index.html#telescope.Telescope.trackObject">[docs]</a>	<span class="k">def</span> <span class="nf">trackObject</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">):</span>
+		<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">		Track an object through the sky</span>
+
+<span class="sd">		Parameters</span>
+<span class="sd">		----------</span>
+<span class="sd">		obj : `~astroplan.FixedTarget`</span>
+<span class="sd">			Object to track</span>
+<span class="sd">		&#39;&#39;&#39;</span>
+
+		<span class="bp">self</span><span class="o">.</span><span class="n">tracking</span> <span class="o">=</span> <span class="bp">True</span>
+
+		<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Slewing to </span><span class="si">%s</span><span class="s2">...&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+		<span class="bp">self</span><span class="o">.</span><span class="n">slewToObject</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>	
+
+		<span class="k">print</span><span class="p">(</span><span class="s2">&quot;Tracking </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">name</span><span class="p">))</span>
+		<span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">tracking</span><span class="p">:</span>
+			<span class="bp">self</span><span class="o">.</span><span class="n">slewToObject</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span></div>
+
+
+	<span class="c1"># TODO: Figure out parking</span>
+<span class="c1">#	def park(self, park=None):</span>
+<span class="c1">#		</span>
+<span class="c1">#		Park the telescope at a certain location. If no location is </span>
+<span class="c1">#		given, park at the initialized location.</span>
+<span class="c1">#</span>
+<span class="c1">#		Parameters</span>
+<span class="c1">#		----------</span>
+<span class="c1">#		park : `~astropy.coordinates.AltAz` (optional)</span>
+<span class="c1">#			Location to park the telescope at</span>
+<span class="c1">#		</span>
+<span class="c1">#</span>
+<span class="c1">#		if not park: park = self.park</span>
+<span class="c1">#</span>
+<span class="c1">#		print(&quot;Parking scope at %s&quot; %park)</span>
+<span class="c1">#</span>
+<span class="c1">##		call to C++ code goes here</span>
+<span class="c1">#</span>
+<span class="c1">#		print(&quot;Finished parking&quot;)</span>
+
+
+<div class="viewcode-block" id="Telescope.record"><a class="viewcode-back" href="../index.html#telescope.Telescope.record">[docs]</a>	<span class="k">def</span> <span class="nf">record</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">outFile</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+		<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">		Records radio signals to an outfile. If no file is specified, it</span>
+<span class="sd">		records to a .txt file with the current date and time as the </span>
+<span class="sd">		title.</span>
+<span class="sd">		</span>
+<span class="sd">		Parameters</span>
+<span class="sd">		----------</span>
+<span class="sd">		outFile : str</span>
+<span class="sd">			Name of the file to write to</span>
+
+<span class="sd">		&#39;&#39;&#39;</span>
+		<span class="k">if</span> <span class="ow">not</span> <span class="n">outFile</span><span class="p">:</span> <span class="n">outFile</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">datetime</span><span class="o">.</span><span class="n">today</span><span class="p">())</span> <span class="o">+</span> <span class="s1">&#39;.txt&#39;</span>
+
+		<span class="k">print</span><span class="p">(</span><span class="s2">&quot;recording to </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span><span class="n">outFile</span><span class="p">)</span></div></div>
+
+<span class="c1">#		call to C++ code goes here</span>
+
+<span class="c1">#		with open(outFile, &#39;a&#39;) as f:</span>
+<span class="c1">#			f.write(c++output)</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2016, Brendon Walter.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
