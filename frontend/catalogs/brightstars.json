@@ -1,0 +1,842 @@
+{
+    "771": {
+        "Bayer Name": "11Alp Lep",
+        "Proper Name": "Arneb",
+        "Magnitude": 2.58,
+        "Coord": {
+            "RA": 5.55,
+            "Dec": -17.82
+        },
+        "Distance": 393.7007874016,
+        "Type": "Star",
+        "Spectrum": "F0Ib"
+    },
+    "959": {
+        "Bayer Name": "9Alp CMa",
+        "Proper Name": "Sirius",
+        "Magnitude": -1.44,
+        "Coord": {
+            "RA": 6.75,
+            "Dec": -16.71
+        },
+        "Distance": 2.6370612589,
+        "Type": "Star",
+        "Spectrum": "A0m..."
+    },
+    "2950": {
+        "Bayer Name": "24Alp PsA",
+        "Proper Name": "Fomalhaut",
+        "Magnitude": 1.17,
+        "Coord": {
+            "RA": 22.96,
+            "Dec": -29.62
+        },
+        "Distance": 7.6875768758,
+        "Type": "Star",
+        "Spectrum": "A3V"
+    },
+    "2823": {
+        "Bayer Name": "Alp Gru",
+        "Proper Name": "Alnair",
+        "Magnitude": 1.73,
+        "Coord": {
+            "RA": 22.14,
+            "Dec": -46.96
+        },
+        "Distance": 31.0945273632,
+        "Type": "Star",
+        "Spectrum": "B7IV"
+    },
+    "1801": {
+        "Bayer Name": "Alp2Cen",
+        "Proper Name": "Rigel Kentaurus B",
+        "Magnitude": 1.35,
+        "Coord": {
+            "RA": 14.66,
+            "Dec": -60.84
+        },
+        "Distance": 1.3474909718,
+        "Type": "Star",
+        "Spectrum": "K1V"
+    },
+    "1688": {
+        "Bayer Name": "79Zet UMa",
+        "Proper Name": "Mizar",
+        "Magnitude": 2.23,
+        "Coord": {
+            "RA": 13.4,
+            "Dec": 54.93
+        },
+        "Distance": 23.9635753654,
+        "Type": "Star",
+        "Spectrum": "A2V"
+    },
+    "15": {
+        "Bayer Name": "21Alp And",
+        "Proper Name": "Alpheratz",
+        "Magnitude": 2.07,
+        "Coord": {
+            "RA": 0.14,
+            "Dec": 29.09
+        },
+        "Distance": 29.7619047619,
+        "Type": "Star",
+        "Spectrum": "B9p"
+    },
+    "2960": {
+        "Bayer Name": "53Bet Peg",
+        "Proper Name": "Scheat",
+        "Magnitude": 2.44,
+        "Coord": {
+            "RA": 23.06,
+            "Dec": 28.08
+        },
+        "Distance": 61.0873549175,
+        "Type": "Star",
+        "Spectrum": "M2II-IIIvar"
+    },
+    "273": {
+        "Bayer Name": "13Alp Ari",
+        "Proper Name": "Hamal",
+        "Magnitude": 2.01,
+        "Coord": {
+            "RA": 2.12,
+            "Dec": 23.46
+        },
+        "Distance": 20.2101859337,
+        "Type": "Star",
+        "Spectrum": "K2III"
+    },
+    "787": {
+        "Bayer Name": "46Eps Ori",
+        "Proper Name": "Alnilam",
+        "Magnitude": 1.69,
+        "Coord": {
+            "RA": 5.6,
+            "Dec": -1.2
+        },
+        "Distance": 411.5226337449,
+        "Type": "Star",
+        "Spectrum": "B0Ia"
+    },
+    "1812": {
+        "Bayer Name": "36Eps Boo",
+        "Proper Name": "Izar",
+        "Magnitude": 2.35,
+        "Coord": {
+            "RA": 14.75,
+            "Dec": 27.07
+        },
+        "Distance": 64.308681672,
+        "Type": "Star",
+        "Spectrum": "A0"
+    },
+    "917": {
+        "Bayer Name": "Alp Car",
+        "Proper Name": "Canopus",
+        "Magnitude": -0.62,
+        "Coord": {
+            "RA": 6.4,
+            "Dec": -52.7
+        },
+        "Distance": 95.8772770853,
+        "Type": "Star",
+        "Spectrum": "F0Ib"
+    },
+    "152": {
+        "Bayer Name": "43Bet And",
+        "Proper Name": "Mirach",
+        "Magnitude": 2.07,
+        "Coord": {
+            "RA": 1.16,
+            "Dec": 35.62
+        },
+        "Distance": 61.1246943765,
+        "Type": "Star",
+        "Spectrum": "M0IIIvar"
+    },
+    "26": {
+        "Bayer Name": "88Gam Peg",
+        "Proper Name": "Algenib",
+        "Magnitude": 2.83,
+        "Coord": {
+            "RA": 0.22,
+            "Dec": 15.18
+        },
+        "Distance": 102.1450459653,
+        "Type": "Star",
+        "Spectrum": "B2IV"
+    },
+    "1691": {
+        "Bayer Name": "67Alp Vir",
+        "Proper Name": "Spica",
+        "Magnitude": 0.98,
+        "Coord": {
+            "RA": 13.42,
+            "Dec": -11.16
+        },
+        "Distance": 80.38585209,
+        "Type": "Star",
+        "Spectrum": "B1V"
+    },
+    "1950": {
+        "Bayer Name": "24Alp Ser",
+        "Proper Name": "Unukalhai",
+        "Magnitude": 2.63,
+        "Coord": {
+            "RA": 15.74,
+            "Dec": 6.43
+        },
+        "Distance": 22.4517287831,
+        "Type": "Star",
+        "Spectrum": "K2III"
+    },
+    "2181": {
+        "Bayer Name": "55Alp Oph",
+        "Proper Name": "Rasalhague",
+        "Magnitude": 2.08,
+        "Coord": {
+            "RA": 17.58,
+            "Dec": 12.56
+        },
+        "Distance": 14.3184421535,
+        "Type": "Star",
+        "Spectrum": "A5III"
+    },
+    "416": {
+        "Bayer Name": "92Alp Cet",
+        "Proper Name": "Menkar",
+        "Magnitude": 2.54,
+        "Coord": {
+            "RA": 3.04,
+            "Dec": 4.09
+        },
+        "Distance": 67.4763832659,
+        "Type": "Star",
+        "Spectrum": "M2III"
+    },
+    "1441": {
+        "Bayer Name": "48Bet UMa",
+        "Proper Name": "Merak",
+        "Magnitude": 2.34,
+        "Coord": {
+            "RA": 11.03,
+            "Dec": 56.38
+        },
+        "Distance": 24.3486729973,
+        "Type": "Star",
+        "Spectrum": "A1V"
+    },
+    "1827": {
+        "Bayer Name": "7Bet UMi",
+        "Proper Name": "Kochab",
+        "Magnitude": 2.07,
+        "Coord": {
+            "RA": 14.85,
+            "Dec": 74.16
+        },
+        "Distance": 38.7747188833,
+        "Type": "Star",
+        "Spectrum": "K4IIIvar"
+    },
+    "1444": {
+        "Bayer Name": "50Alp UMa",
+        "Proper Name": "Dubhe",
+        "Magnitude": 1.81,
+        "Coord": {
+            "RA": 11.06,
+            "Dec": 61.75
+        },
+        "Distance": 37.9075056861,
+        "Type": "Star",
+        "Spectrum": "F7V comp"
+    },
+    "2342": {
+        "Bayer Name": "34Sig Sgr",
+        "Proper Name": "Nunki",
+        "Magnitude": 2.05,
+        "Coord": {
+            "RA": 18.92,
+            "Dec": -26.3
+        },
+        "Distance": 68.7757909216,
+        "Type": "Star",
+        "Spectrum": "B2.5V"
+    },
+    "1575": {
+        "Bayer Name": "Alp1Cru",
+        "Proper Name": "Acrux",
+        "Magnitude": 0.77,
+        "Coord": {
+            "RA": 12.44,
+            "Dec": -63.1
+        },
+        "Distance": 98.3284169125,
+        "Type": "Star",
+        "Spectrum": "B0.5IV"
+    },
+    "426": {
+        "Bayer Name": "26Bet Per",
+        "Proper Name": "Algol",
+        "Magnitude": 2.09,
+        "Coord": {
+            "RA": 3.14,
+            "Dec": 40.96
+        },
+        "Distance": 28.4575981787,
+        "Type": "Star",
+        "Spectrum": "B8V"
+    },
+    "1067": {
+        "Bayer Name": "66Alp Gem",
+        "Proper Name": "Castor",
+        "Magnitude": 1.58,
+        "Coord": {
+            "RA": 7.58,
+            "Dec": 31.89
+        },
+        "Distance": 15.8052789632,
+        "Type": "Star",
+        "Spectrum": "A2Vm"
+    },
+    "942": {
+        "Bayer Name": "24Gam Gem",
+        "Proper Name": "Alhena",
+        "Magnitude": 1.93,
+        "Coord": {
+            "RA": 6.63,
+            "Dec": 16.4
+        },
+        "Distance": 32.1336760925,
+        "Type": "Star",
+        "Spectrum": "A0IV"
+    },
+    "47": {
+        "Bayer Name": "Alp Phe",
+        "Proper Name": "Ankaa",
+        "Magnitude": 2.4,
+        "Coord": {
+            "RA": 0.44,
+            "Dec": -42.31
+        },
+        "Distance": 23.7304224015,
+        "Type": "Star",
+        "Spectrum": "K0III..."
+    },
+    "1072": {
+        "Bayer Name": "10Alp CMi",
+        "Proper Name": "Procyon",
+        "Magnitude": 0.4,
+        "Coord": {
+            "RA": 7.66,
+            "Dec": 5.23
+        },
+        "Distance": 3.4973594936,
+        "Type": "Star",
+        "Spectrum": "F5IV-V"
+    },
+    "2481": {
+        "Bayer Name": "53Alp Aql",
+        "Proper Name": "Altair",
+        "Magnitude": 0.76,
+        "Coord": {
+            "RA": 19.85,
+            "Dec": 8.87
+        },
+        "Distance": 5.1429746966,
+        "Type": "Star",
+        "Spectrum": "A7IV-V"
+    },
+    "818": {
+        "Bayer Name": "53Kap Ori",
+        "Proper Name": "Saiph",
+        "Magnitude": 2.07,
+        "Coord": {
+            "RA": 5.8,
+            "Dec": -9.67
+        },
+        "Distance": 221.2389380531,
+        "Type": "Star",
+        "Spectrum": "B0.5Iavar"
+    },
+    "999": {
+        "Bayer Name": "21Eps CMa",
+        "Proper Name": "Adhara",
+        "Magnitude": 1.5,
+        "Coord": {
+            "RA": 6.98,
+            "Dec": -28.97
+        },
+        "Distance": 132.1003963012,
+        "Type": "Star",
+        "Spectrum": "B2II"
+    },
+    "2619": {
+        "Bayer Name": "50Alp Cyg",
+        "Proper Name": "Deneb",
+        "Magnitude": 1.25,
+        "Coord": {
+            "RA": 20.69,
+            "Dec": 45.28
+        },
+        "Distance": 990.099009901,
+        "Type": "Star",
+        "Spectrum": "A2Ia"
+    },
+    "1084": {
+        "Bayer Name": "78Bet Gem",
+        "Proper Name": "Pollux",
+        "Magnitude": 1.16,
+        "Coord": {
+            "RA": 7.76,
+            "Dec": 28.03
+        },
+        "Distance": 10.336985735,
+        "Type": "Star",
+        "Spectrum": "K0IIIvar"
+    },
+    "1725": {
+        "Bayer Name": "85Eta UMa",
+        "Proper Name": "Alkaid",
+        "Magnitude": 1.85,
+        "Coord": {
+            "RA": 13.79,
+            "Dec": 49.31
+        },
+        "Distance": 30.8737264588,
+        "Type": "Star",
+        "Spectrum": "B3V SB"
+    },
+    "1653": {
+        "Bayer Name": "47Eps Vir",
+        "Proper Name": "Vindemiatrix",
+        "Magnitude": 2.85,
+        "Coord": {
+            "RA": 13.04,
+            "Dec": 10.96
+        },
+        "Distance": 31.3479623824,
+        "Type": "Star",
+        "Spectrum": "G8IIIvar"
+    },
+    "843": {
+        "Bayer Name": "58Alp Ori",
+        "Proper Name": "Betelgeuse",
+        "Magnitude": 0.45,
+        "Coord": {
+            "RA": 5.92,
+            "Dec": 7.41
+        },
+        "Distance": 131.0615989515,
+        "Type": "Star",
+        "Spectrum": "M2Ib"
+    },
+    "1349": {
+        "Bayer Name": "32Alp Leo",
+        "Proper Name": "Regulus",
+        "Magnitude": 1.36,
+        "Coord": {
+            "RA": 10.14,
+            "Dec": 11.97
+        },
+        "Distance": 23.758612497,
+        "Type": "Star",
+        "Spectrum": "B7V"
+    },
+    "801": {
+        "Bayer Name": "50Zet Ori",
+        "Proper Name": "Alnitak",
+        "Magnitude": 1.74,
+        "Coord": {
+            "RA": 5.68,
+            "Dec": -1.94
+        },
+        "Distance": 250.626566416,
+        "Type": "Star",
+        "Spectrum": "O9.5Ib SB"
+    },
+    "457": {
+        "Bayer Name": "33Alp Per",
+        "Proper Name": "Mirphak",
+        "Magnitude": 1.79,
+        "Coord": {
+            "RA": 3.41,
+            "Dec": 49.86
+        },
+        "Distance": 181.4882032668,
+        "Type": "Star",
+        "Spectrum": "F5Ib"
+    },
+    "714": {
+        "Bayer Name": "19Bet Ori",
+        "Proper Name": "Rigel",
+        "Magnitude": 0.18,
+        "Coord": {
+            "RA": 5.24,
+            "Dec": -8.2
+        },
+        "Distance": 236.9668246446,
+        "Type": "Star",
+        "Spectrum": "B8Ia"
+    },
+    "75": {
+        "Bayer Name": "18Alp Cas",
+        "Proper Name": "Shedir",
+        "Magnitude": 2.24,
+        "Coord": {
+            "RA": 0.68,
+            "Dec": 56.54
+        },
+        "Distance": 70.0770847933,
+        "Type": "Star",
+        "Spectrum": "K0II-IIIvar"
+    },
+    "333": {
+        "Bayer Name": "1Alp UMi",
+        "Proper Name": "Polaris",
+        "Magnitude": 1.97,
+        "Coord": {
+            "RA": 2.53,
+            "Dec": 89.26
+        },
+        "Distance": 132.2751322751,
+        "Type": "Star",
+        "Spectrum": "F7:Ib-IIv SB"
+    },
+    "718": {
+        "Bayer Name": "13Alp Aur",
+        "Proper Name": "Capella",
+        "Magnitude": 0.08,
+        "Coord": {
+            "RA": 5.28,
+            "Dec": 46.0
+        },
+        "Distance": 12.9382843835,
+        "Type": "Star",
+        "Spectrum": "M1: comp"
+    },
+    "208": {
+        "Bayer Name": "Alp Eri",
+        "Proper Name": "Achernar",
+        "Magnitude": 0.45,
+        "Coord": {
+            "RA": 1.63,
+            "Dec": -57.24
+        },
+        "Distance": 44.0917107584,
+        "Type": "Star",
+        "Spectrum": "B3Vp"
+    },
+    "2770": {
+        "Bayer Name": "8Eps Peg",
+        "Proper Name": "Enif",
+        "Magnitude": 2.38,
+        "Coord": {
+            "RA": 21.74,
+            "Dec": 9.88
+        },
+        "Distance": 206.1855670103,
+        "Type": "Star",
+        "Spectrum": "K2Ibvar"
+    },
+    "84": {
+        "Bayer Name": "16Bet Cet",
+        "Proper Name": "Diphda",
+        "Magnitude": 2.04,
+        "Coord": {
+            "RA": 0.73,
+            "Dec": -17.99
+        },
+        "Distance": 29.3772032902,
+        "Type": "Star",
+        "Spectrum": "K0III"
+    },
+    "2219": {
+        "Bayer Name": "33Gam Dra",
+        "Proper Name": "Etamin",
+        "Magnitude": 2.24,
+        "Coord": {
+            "RA": 17.94,
+            "Dec": 51.49
+        },
+        "Distance": 45.2488687783,
+        "Type": "Star",
+        "Spectrum": "K5III"
+    },
+    "1750": {
+        "Bayer Name": "Bet Cen",
+        "Proper Name": "Hadar",
+        "Magnitude": 0.61,
+        "Coord": {
+            "RA": 14.06,
+            "Dec": -60.37
+        },
+        "Distance": 161.0305958132,
+        "Type": "Star",
+        "Spectrum": "B1III"
+    },
+    "1367": {
+        "Bayer Name": "41Gam1Leo",
+        "Proper Name": "Algieba",
+        "Magnitude": 2.01,
+        "Coord": {
+            "RA": 10.33,
+            "Dec": 19.84
+        },
+        "Distance": 38.5208012327,
+        "Type": "Star",
+        "Spectrum": "K0III"
+    },
+    "2138": {
+        "Bayer Name": "64Alp1Her",
+        "Proper Name": "Rasalgethi",
+        "Magnitude": 2.78,
+        "Coord": {
+            "RA": 17.24,
+            "Dec": 14.39
+        },
+        "Distance": 117.2332942556,
+        "Type": "Star",
+        "Spectrum": "M5IIvar"
+    },
+    "2063": {
+        "Bayer Name": "21Alp Sco",
+        "Proper Name": "Antares",
+        "Magnitude": 1.06,
+        "Coord": {
+            "RA": 16.49,
+            "Dec": -26.43
+        },
+        "Distance": 185.1851851852,
+        "Type": "Star",
+        "Spectrum": "M1Ib + B2.5V"
+    },
+    "2279": {
+        "Bayer Name": "20Eps Sgr",
+        "Proper Name": "Kaus Australis",
+        "Magnitude": 1.79,
+        "Coord": {
+            "RA": 18.4,
+            "Dec": -34.38
+        },
+        "Distance": 44.3458980044,
+        "Type": "Star",
+        "Spectrum": "B9.5III"
+    },
+    "1636": {
+        "Bayer Name": "77Eps UMa",
+        "Proper Name": "Alioth",
+        "Magnitude": 1.76,
+        "Coord": {
+            "RA": 12.9,
+            "Dec": 55.96
+        },
+        "Distance": 24.8138957816,
+        "Type": "Star",
+        "Spectrum": "A0p"
+    },
+    "2179": {
+        "Bayer Name": "35Lam Sco",
+        "Proper Name": "Shaula",
+        "Magnitude": 1.62,
+        "Coord": {
+            "RA": 17.56,
+            "Dec": -37.1
+        },
+        "Distance": 215.5172413793,
+        "Type": "Star",
+        "Spectrum": "B1.5IV+..."
+    },
+    "2470": {
+        "Bayer Name": "50Gam Aql",
+        "Proper Name": "Tarazed",
+        "Magnitude": 2.72,
+        "Coord": {
+            "RA": 19.77,
+            "Dec": 10.61
+        },
+        "Distance": 141.2429378531,
+        "Type": "Star",
+        "Spectrum": "K3II"
+    },
+    "17": {
+        "Bayer Name": "11Bet Cas",
+        "Proper Name": "Caph",
+        "Magnitude": 2.28,
+        "Coord": {
+            "RA": 0.15,
+            "Dec": 59.15
+        },
+        "Distance": 16.6972783436,
+        "Type": "Star",
+        "Spectrum": "F2III-IV"
+    },
+    "1768": {
+        "Bayer Name": "16Alp Boo",
+        "Proper Name": "Arcturus",
+        "Magnitude": -0.05,
+        "Coord": {
+            "RA": 14.26,
+            "Dec": 19.19
+        },
+        "Distance": 11.2549240293,
+        "Type": "Star",
+        "Spectrum": "K2IIIp"
+    },
+    "1513": {
+        "Bayer Name": "94Bet Leo",
+        "Proper Name": "Denebola",
+        "Magnitude": 2.14,
+        "Coord": {
+            "RA": 11.82,
+            "Dec": 14.57
+        },
+        "Distance": 11.091393079,
+        "Type": "Star",
+        "Spectrum": "A3Vvar"
+    },
+    "1802": {
+        "Bayer Name": "Alp1Cen",
+        "Proper Name": "Rigel Kentaurus A",
+        "Magnitude": -0.01,
+        "Coord": {
+            "RA": 14.66,
+            "Dec": -60.84
+        },
+        "Distance": 1.3474909718,
+        "Type": "Star",
+        "Spectrum": "G2V"
+    },
+    "747": {
+        "Bayer Name": "24Gam Ori",
+        "Proper Name": "Bellatrix",
+        "Magnitude": 1.64,
+        "Coord": {
+            "RA": 5.42,
+            "Dec": 6.35
+        },
+        "Distance": 74.5156482861,
+        "Type": "Star",
+        "Spectrum": "B2III"
+    },
+    "1516": {
+        "Bayer Name": "64Gam UMa",
+        "Proper Name": "Phad",
+        "Magnitude": 2.41,
+        "Coord": {
+            "RA": 11.9,
+            "Dec": 53.69
+        },
+        "Distance": 25.6476019492,
+        "Type": "Star",
+        "Spectrum": "A0V SB"
+    },
+    "749": {
+        "Bayer Name": "112Bet Tau",
+        "Proper Name": "Alnath",
+        "Magnitude": 1.65,
+        "Coord": {
+            "RA": 5.44,
+            "Dec": 28.61
+        },
+        "Distance": 40.1767778224,
+        "Type": "Star",
+        "Spectrum": "B7III"
+    },
+    "2707": {
+        "Bayer Name": "5Alp Cep",
+        "Proper Name": "Alderamin",
+        "Magnitude": 2.45,
+        "Coord": {
+            "RA": 21.31,
+            "Dec": 62.59
+        },
+        "Distance": 14.961101137,
+        "Type": "Star",
+        "Spectrum": "A7IV-V"
+    },
+    "757": {
+        "Bayer Name": "9Bet Lep",
+        "Proper Name": "Nihal",
+        "Magnitude": 2.81,
+        "Coord": {
+            "RA": 5.47,
+            "Dec": -20.76
+        },
+        "Distance": 48.8042947779,
+        "Type": "Star",
+        "Spectrum": "G5II"
+    },
+    "617": {
+        "Bayer Name": "87Alp Tau",
+        "Proper Name": "Aldebaran",
+        "Magnitude": 0.87,
+        "Coord": {
+            "RA": 4.6,
+            "Dec": 16.51
+        },
+        "Distance": 19.9640646836,
+        "Type": "Star",
+        "Spectrum": "K5III"
+    },
+    "2964": {
+        "Bayer Name": "54Alp Peg",
+        "Proper Name": "Markab",
+        "Magnitude": 2.49,
+        "Coord": {
+            "RA": 23.08,
+            "Dec": 15.21
+        },
+        "Distance": 42.8082191781,
+        "Type": "Star",
+        "Spectrum": "B9.5III"
+    },
+    "1275": {
+        "Bayer Name": "30Alp Hya",
+        "Proper Name": "Alphard",
+        "Magnitude": 1.99,
+        "Coord": {
+            "RA": 9.46,
+            "Dec": -8.66
+        },
+        "Distance": 54.347826087,
+        "Type": "Star",
+        "Spectrum": "K3III"
+    },
+    "508": {
+        "Bayer Name": "25Eta Tau",
+        "Proper Name": "Alcyone",
+        "Magnitude": 2.85,
+        "Coord": {
+            "RA": 3.79,
+            "Dec": 24.11
+        },
+        "Distance": 112.7395715896,
+        "Type": "Star",
+        "Spectrum": "B7III"
+    },
+    "2301": {
+        "Bayer Name": "3Alp Lyr",
+        "Proper Name": "Vega",
+        "Magnitude": 0.03,
+        "Coord": {
+            "RA": 18.62,
+            "Dec": 38.78
+        },
+        "Distance": 7.7561467463,
+        "Type": "Star",
+        "Spectrum": "A0Vvar"
+    },
+    "1919": {
+        "Bayer Name": "5Alp CrB",
+        "Proper Name": "Alphekka",
+        "Magnitude": 2.22,
+        "Coord": {
+            "RA": 15.58,
+            "Dec": 26.71
+        },
+        "Distance": 22.9095074456,
+        "Type": "Star",
+        "Spectrum": "A0V"
+    }
+}
