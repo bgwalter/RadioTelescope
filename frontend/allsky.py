@@ -43,8 +43,7 @@ class AllSky:
         if (time is None):
             time = Time(datetime.now())
 
+        plt.ion()
         for key, val in self.objects.items():
             if (observer.target_is_up(time, val)):
                 plot_sky(val, observer, time)
-
-        plt.show()
