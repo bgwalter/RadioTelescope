@@ -75,10 +75,10 @@
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_2">
              <item>
-              <widget class="QLineEdit" name="alt"/>
+              <widget class="QLineEdit" name="ra"/>
              </item>
              <item>
-              <widget class="QLineEdit" name="az"/>
+              <widget class="QLineEdit" name="dec"/>
              </item>
              <item>
               <widget class="QPushButton" name="slewBtn">

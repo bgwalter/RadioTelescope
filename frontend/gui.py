@@ -1,48 +1,84 @@
+from qt5gui import Ui_RadioTelescope
+from telescope import Telescope
+
 import sys
 
+# matplotlib imports for graphs and figures
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_qt5agg import (
     FigureCanvasQTAgg as FigureCanvas,
     NavigationToolbar2QT as NavigattionToolbar)
 
+# PyQt 5 imports for GUI
 from PyQt5 import QtGui, QtCore, QtWidgets
 from PyQt5.uic import loadUiType
 Ui_MainWindow, QMainWindow = loadUiType('qt5gui.ui')
 
-from qt5gui import Ui_RadioTelescope
-
 
 class RadioGUI(QMainWindow, Ui_MainWindow):
-    def __init__(self, location):
-        super(RadioGUI, self).__init__();
+    def __init__(self, Telescope):
+        '''
+        Initialize the GUI
+
+        Parameters
+        ----------
+        telescope : `~telescope.Telescope`
+            The telescope object to control
+        '''
+
+        # setup PyQt5 class
+        super(RadioGUI, self).__init__()
         self.setupUi(self)
 
-        self.siteName = location["SITE_NAME"]
-        self.latitude = location["LATITUDE"]
-        self.longitude = location["LONGITUDE"]
-
-        self.slewBtn.clicked.connect(self.slew)
+        # configure buttons to call functions
+        self.slewBtn.clicked.connect(self.slewToCoord)
         self.slewBtn.clicked.connect(self.park)
 
-        self.populateInfo();
+        # get values from telescope class
+        self.telescope = Telescope
+        self.siteName = self.telescope.Observer.name
+        self.latitude = self.telescope.Observer.location.latitude
+        self.longitude = self.telescope.Observer.location.longitude
+
+        self.populateInfo()
 
     def populateInfo(self):
-        self.telescopeInfo.addItem("Site: %s" %self.siteName)
-        self.telescopeInfo.addItem("Latitude: %s" %self.latitude)
-        self.telescopeInfo.addItem("Longitude: %s" %self.longitude)
+        '''
+        Add information about the telescope to the window
+        '''
 
-    def slew(self):
-        pass
+        self.telescopeInfo.addItem("Site: %s" % self.siteName)
+        self.telescopeInfo.addItem("Latitude: %s" % self.latitude)
+        self.telescopeInfo.addItem("Longitude: %s" % self.longitude)
+
+    def printInfo(self, string):
+        '''
+        Print information to the command output box
+
+        Parameters
+        ----------
+        string : str
+            String to print to the window
+        '''
+
+        self.commandOutput.addItem(string)
+
+    def slewToCoord(self):
+        '''
+        Slew to the RA/Dec coordinates given as user input in the window
+        '''
+
+        # get the coordinates from the input box
+        ra = self.ra.text()
+        dec = self.dec.text()
+        self.telescope.slewToCoord(ra, dec, qwindow=self)
 
     def park(self):
         pass
 
-def run(location):
+
+def run(telescope):
     app = QtWidgets.QApplication(sys.argv)
-    radiogui = RadioGUI(location)
+    radiogui = RadioGUI(telescope)
     radiogui.show()
-#    RadioTelescope = QtWidgets.QMainWindow()
-#    ui = Ui_RadioTelescope()
-#    ui.setupUi(RadioTelescope)
-#    RadioTelescope.show()
     sys.exit(app.exec_())

@@ -28,7 +28,8 @@ with open('catalogs/brightstars.json', 'r') as f:
 '''
 
 # set new Observer object from config file
-add_site(location["SITE_NAME"], EarthLocation(lat=location["LATITUDE"], lon=location["LONGITUDE"]))
+add_site(location["SITE_NAME"], EarthLocation(lat=location["LATITUDE"],
+            lon=location["LONGITUDE"]))
 telescope = Telescope(Observer.at_site(location["SITE_NAME"]))
 
 fixed_targets = {}
@@ -61,4 +62,4 @@ for key in stars:
 #print("drawing")
 #allsky.draw(telescope.Observer, telescope.getTime())
 
-gui.run(location)
+gui.run(telescope)

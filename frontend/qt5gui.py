@@ -58,12 +58,12 @@ class Ui_RadioTelescope(object):
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.alt = QtWidgets.QLineEdit(self.commandBox)
-        self.alt.setObjectName("alt")
-        self.horizontalLayout_2.addWidget(self.alt)
-        self.az = QtWidgets.QLineEdit(self.commandBox)
-        self.az.setObjectName("az")
-        self.horizontalLayout_2.addWidget(self.az)
+        self.ra = QtWidgets.QLineEdit(self.commandBox)
+        self.ra.setObjectName("ra")
+        self.horizontalLayout_2.addWidget(self.ra)
+        self.dec = QtWidgets.QLineEdit(self.commandBox)
+        self.dec.setObjectName("dec")
+        self.horizontalLayout_2.addWidget(self.dec)
         self.slewBtn = QtWidgets.QPushButton(self.commandBox)
         self.slewBtn.setObjectName("slewBtn")
         self.horizontalLayout_2.addWidget(self.slewBtn)
@@ -106,14 +106,4 @@ class Ui_RadioTelescope(object):
         self.recordBtn.setText(_translate("RadioTelescope", "Record"))
         self.parkBtn.setText(_translate("RadioTelescope", "Park"))
         self.actionAbout.setText(_translate("RadioTelescope", "About"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    RadioTelescope = QtWidgets.QMainWindow()
-    ui = Ui_RadioTelescope()
-    ui.setupUi(RadioTelescope)
-    RadioTelescope.show()
-    sys.exit(app.exec_())
 

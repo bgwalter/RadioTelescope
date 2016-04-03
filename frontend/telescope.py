@@ -1,6 +1,7 @@
 from datetime import datetime
 from astropy.time import Time
 from astropy.coordinates import SkyCoord
+from astropy import units as u
 
 
 class Telescope:
@@ -29,22 +30,31 @@ class Telescope:
 
         return Time(datetime.now())
 
-    def printTelescope(self):
+    def printTelescope(self, qwindow=None):
         '''
         Print information about the telescope to the screen
         '''
 
-        print(self.Observer.name)
+        name = self.Observer.name
+        location = ("Latitude: %s\tLongitude: %s" %
+                    (self.Observer.location.latitude,
+                     self.Observer.location.longitude))
+        time = "Current time is %s" % (self.getTime())
+#        park = ("Telescope park location: %s, %s" %
+#                (self.park.az, self.park.alt))
 
-        print("Latitude: %s\tLongitude: %s" %
-              (self.Observer.location.latitude,
-               self.Observer.location.longitude))
+        if qwindow is None:
+            print(name)
+            print(location)
+            print(time)
+#            print(park)
+        else:
+            qwindow.printInfo(name)
+            qwindow.printInfo(location)
+            qwindow.printInfo(time)
+#            qwindow.printInfo(park)
 
-        print("Current time is %s" % (self.getTime()))
-        # print("Telescope park location: %s, %s" %
-        #        (self.park.az, self.park.alt))
-
-    def slewToCoord(self, ra, dec, time=None):
+    def slewToCoord(self, ra, dec, time=None, qwindow=None):
         '''
         Slew the telescope to a given AltAz
 
@@ -61,22 +71,42 @@ class Telescope:
             the current time.
         '''
 
-        print("Slewing to RA: %s, Dec: %s..." % (ra, dec))
+        # make sure input coordinates are valid
+        try:
+            coord = SkyCoord(ra, dec)
+        except u.UnitsError:
+            self.slewToCoord(float(ra)*u.deg, float(dec)*u.deg, time, qwindow)
+            return
+        except ValueError:
+            error = "Please input a valid format for RA and Dec."\
+                    "\nAcceptable formats:\n"\
+                    "\t'xxhxxmxxs, xxdxxmxxs'\n\t'xx.xxx, xx.xxx'"
+            if qwindow is None: print(error)
+            else: qwindow.printInfo(error)
+            return
 
-        # check if the coordinates are above the horizon
-        if not time:
+        if time is None:
             time = self.getTime()
 
-        coord = SkyCoord(ra, dec)
+        # check if the coordinates are above the horizon
         if not self.Observer.target_is_up(time, coord):
-            print("Target RA: %s, Dec: %s is below the horizon." % (ra, dec))
+            string = "Target RA: %s, Dec: %s is below the horizon." % (ra, dec)
+            if qwindow is None: print(string)
+            else: qwindow.printInfo(string)
+
             return
+
+        string = "Slewing to RA: %s, Dec: %s..." % (ra, dec)
+        if qwindow is None: print(string)
+        else: qwindow.printInfo(string)
 
 #        call to C++ code goes here
 
-        print("Finished slewing to RA: %s, Dec: %s." % (ra, dec))
+        string = "Finished slewing to RA: %s, Dec: %s." % (ra, dec)
+        if qwindow is None: print(string)
+        else: qwindow.printInfo(string)
 
-    def slewToObject(self, obj):
+    def slewToObject(self, obj, time=None, qwindow=None):
         '''
         Slew the telescope to an object
 
@@ -84,12 +114,46 @@ class Telescope:
         ----------
         obj : `~astroplan.FixedTarget`
             Object to observe
+
+        time : `~astropy.time.Time` (optional)
+            Time of the observation. If left blank, it will default to
+            the current time.
         '''
 
-        print("Slewing to %s..." % (obj.name))
-        self.slewToCoord(obj.ra, obj.dec)
+        string = "Slewing to %s..." % (obj.name)
+        if qwindow is None: print(string)
+        else: qwindow.printInfo(string)
 
-    def trackObject(self, obj):
+        self.slewToCoord(obj.ra, obj.dec, time, qwindow)
+
+    def track(self, ra, dec, time=None, qwindow=None):
+        '''
+        Track given coordinates
+
+        Parameters
+        ----------
+        ra : float
+            Right Ascension in degrees
+
+        dec : float
+            Declination in degrees
+
+        time : `~astropy.time.Time` (optional)
+            Time of the observation. If left blank, it will default to
+            the current time.
+        '''
+        self.tracking = True
+        self.slewToCoord(ra, dec, time, qwindow)
+
+        string = "Tracking RA: %s, Dec: %s" % (ra, dec)
+        if qwindow is None: print(string)
+        else: qwindow.printInfo(string)
+
+        # TODO: Figure out tacking (threading?)
+#        while self.tracking:
+#            self.slewToCoord(ra, dec, time, qwindow)
+
+    def trackObject(self, obj, time=None, qwindow=None):
         '''
         Track an object through the sky
 
@@ -97,16 +161,22 @@ class Telescope:
         ----------
         obj : `~astroplan.FixedTarget`
             Object to track
+
+        time : `~astropy.time.Time` (optional)
+            Time of the observation. If left blank, it will default to
+            the current time.
         '''
 
         self.tracking = True
 
-        print("Slewing to %s..." % (obj.name))
         self.slewToObject(obj)
 
-        print("Tracking %s" % (obj.name))
-        while self.tracking:
-            self.slewToObject(obj)
+        string = "Tracking %s" % (obj.name)
+        if qwindow is None: print(string)
+        else: qwindow.printInfo(string)
+
+#        while self.tracking:
+#            self.slewToObject(obj)
 
     # TODO: Figure out parking
 #    def park(self, park=None):
@@ -128,7 +198,7 @@ class Telescope:
 #
 #        print("Finished parking")
 
-    def record(self, outFile=None):
+    def record(self, outFile=None, qwindow=None):
         '''
         Records radio signals to an outfile. If no file is specified, it
         records to a .txt file with the current date and time as the
@@ -143,7 +213,9 @@ class Telescope:
         if not outFile:
             outFile = str(datetime.today()) + '.txt'
 
-        print("recording to %s" % outFile)
+        string = "Recording to %s" % outFile
+        if qwindow is None: print(string)
+        else: qwindow.printInfo(string)
 
 #        call to C++ code goes here
 
