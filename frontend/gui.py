@@ -2,6 +2,7 @@ from qt5gui import Ui_RadioTelescope
 from telescope import Telescope
 
 import sys
+import time
 
 # matplotlib imports for graphs and figures
 from matplotlib.figure import Figure
@@ -11,8 +12,30 @@ from matplotlib.backends.backend_qt5agg import (
 
 # PyQt 5 imports for GUI
 from PyQt5 import QtGui, QtCore, QtWidgets
+from PyQt5.QtCore import QThread
 from PyQt5.uic import loadUiType
 Ui_MainWindow, QMainWindow = loadUiType('qt5gui.ui')
+
+class slewingThread(QThread):
+    def __init__(self, ra, dec, telescope, qwindow):
+        QThread.__init__(self)
+        self.ra = ra
+        self.dec = dec
+        self.telescope = telescope
+        self.qwindow = qwindow
+
+    def slewToCoord(self):
+        self.telescope.slewToCoord(self.ra, self.dec, qwindow=self.qwindow)
+        while self.qwindow.trackBtn.isChecked():
+            time.sleep(1)
+            self.telescope.slewToCoord(self.ra, self.dec, qwindow=self.qwindow)
+        self.quit()
+
+    def run(self):
+        self.slewToCoord()
+
+    def __del__(self):
+        self.wait()
 
 
 class RadioGUI(QMainWindow, Ui_MainWindow):
@@ -71,7 +94,15 @@ class RadioGUI(QMainWindow, Ui_MainWindow):
         # get the coordinates from the input box
         ra = self.ra.text()
         dec = self.dec.text()
-        self.telescope.slewToCoord(ra, dec, qwindow=self)
+
+        self.slewThread = slewingThread(ra, dec, self.telescope, self)
+        self.slewThread.start()
+
+    def track(self):
+        ra = self.ra.text()
+        dec = self.dec.text()
+        self.slewThread = slewingThread(ra, dec, self.telescope, self)
+        self.slewThread.start()
 
     def park(self):
         pass

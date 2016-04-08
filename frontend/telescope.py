@@ -30,29 +30,24 @@ class Telescope:
 
         return Time(datetime.now())
 
+    def printInfo(self, string, qwindow=None):
+        if qwindow is None:
+            print(string)
+        else:
+            qwindow.printInfo(string)
+
     def printTelescope(self, qwindow=None):
         '''
         Print information about the telescope to the screen
         '''
 
-        name = self.Observer.name
-        location = ("Latitude: %s\tLongitude: %s" %
-                    (self.Observer.location.latitude,
-                     self.Observer.location.longitude))
-        time = "Current time is %s" % (self.getTime())
-#        park = ("Telescope park location: %s, %s" %
-#                (self.park.az, self.park.alt))
-
-        if qwindow is None:
-            print(name)
-            print(location)
-            print(time)
-#            print(park)
-        else:
-            qwindow.printInfo(name)
-            qwindow.printInfo(location)
-            qwindow.printInfo(time)
-#            qwindow.printInfo(park)
+        self.printInfo(self.Observer.name, qwindow)
+        self.printInfo("Latitude: %s\tLongitude: %s" %
+                  (self.Observer.location.latitude,
+                   self.Observer.location.longitude), qwindow)
+        self.printInfo("Current time is %s" % self.getTime())
+#        self.printInfo("Telescope park location: %s, %s" %
+#                  (self.park.az, self.park.alt))
 
     def slewToCoord(self, ra, dec, time=None, qwindow=None):
         '''
@@ -75,14 +70,15 @@ class Telescope:
         try:
             coord = SkyCoord(ra, dec)
         except u.UnitsError:
+            # convert coordintes to degrees
             self.slewToCoord(float(ra)*u.deg, float(dec)*u.deg, time, qwindow)
             return
         except ValueError:
+            # user didn't put in valid coordinates
             error = "Please input a valid format for RA and Dec."\
                     "\nAcceptable formats:\n"\
                     "\t'xxhxxmxxs, xxdxxmxxs'\n\t'xx.xxx, xx.xxx'"
-            if qwindow is None: print(error)
-            else: qwindow.printInfo(error)
+            self.printInfo(error, qwindow)
             return
 
         if time is None:
@@ -90,21 +86,15 @@ class Telescope:
 
         # check if the coordinates are above the horizon
         if not self.Observer.target_is_up(time, coord):
-            string = "Target RA: %s, Dec: %s is below the horizon." % (ra, dec)
-            if qwindow is None: print(string)
-            else: qwindow.printInfo(string)
-
+            self.printInfo("Target RA: %s, Dec: %s is below the horizon." %
+                      (ra, dec), qwindow)
             return
 
-        string = "Slewing to RA: %s, Dec: %s..." % (ra, dec)
-        if qwindow is None: print(string)
-        else: qwindow.printInfo(string)
+        self.printInfo("Slewing to RA: %s, Dec: %s..." %(ra, dec), qwindow)
 
 #        call to C++ code goes here
 
-        string = "Finished slewing to RA: %s, Dec: %s." % (ra, dec)
-        if qwindow is None: print(string)
-        else: qwindow.printInfo(string)
+        self.printInfo("Finished slewing to RA: %s, Dec: %s." % (ra, dec), qwindow)
 
     def slewToObject(self, obj, time=None, qwindow=None):
         '''
@@ -120,10 +110,7 @@ class Telescope:
             the current time.
         '''
 
-        string = "Slewing to %s..." % (obj.name)
-        if qwindow is None: print(string)
-        else: qwindow.printInfo(string)
-
+        self.printInfo("Slewing to %s..." % (obj.name), qwindow)
         self.slewToCoord(obj.ra, obj.dec, time, qwindow)
 
     def track(self, ra, dec, time=None, qwindow=None):
@@ -144,14 +131,7 @@ class Telescope:
         '''
         self.tracking = True
         self.slewToCoord(ra, dec, time, qwindow)
-
-        string = "Tracking RA: %s, Dec: %s" % (ra, dec)
-        if qwindow is None: print(string)
-        else: qwindow.printInfo(string)
-
-        # TODO: Figure out tacking (threading?)
-#        while self.tracking:
-#            self.slewToCoord(ra, dec, time, qwindow)
+        self.printInfo("Tracking RA: %s, Dec: %s" % (ra, dec), qwindow)
 
     def trackObject(self, obj, time=None, qwindow=None):
         '''
@@ -168,15 +148,8 @@ class Telescope:
         '''
 
         self.tracking = True
-
         self.slewToObject(obj)
-
-        string = "Tracking %s" % (obj.name)
-        if qwindow is None: print(string)
-        else: qwindow.printInfo(string)
-
-#        while self.tracking:
-#            self.slewToObject(obj)
+        self.printInfo("Tracking %s" % (obj.name), qwindow)
 
     # TODO: Figure out parking
 #    def park(self, park=None):
@@ -213,9 +186,7 @@ class Telescope:
         if not outFile:
             outFile = str(datetime.today()) + '.txt'
 
-        string = "Recording to %s" % outFile
-        if qwindow is None: print(string)
-        else: qwindow.printInfo(string)
+        self.printInfo("Recording to %s" % outFile)
 
 #        call to C++ code goes here
 
