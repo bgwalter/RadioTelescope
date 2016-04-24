@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from astroplan.plots import plot_sky
 import matplotlib.pyplot as plt
 from astropy.time import Time
@@ -43,7 +45,7 @@ class AllSky:
         if (time is None):
             time = Time(datetime.now())
 
-        plt.ion()
         for key, val in self.objects.items():
-            if (observer.target_is_up(time, val)):
-                plot_sky(val, observer, time)
+            plot_sky(val, observer, time, warn_below_horizon=False)
+
+        return plt

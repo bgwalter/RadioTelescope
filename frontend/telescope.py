@@ -2,6 +2,7 @@ from datetime import datetime
 from astropy.time import Time
 from astropy.coordinates import SkyCoord
 from astropy import units as u
+from time import sleep
 
 
 class Telescope:
@@ -21,7 +22,8 @@ class Telescope:
 
         self.Observer = observer
         # self.park = park            # TODO: Figure this out
-        self.tracking = False
+        self.isMoving = False
+        self.isTracking = False
 
     def getTime(self):
         '''
@@ -43,8 +45,8 @@ class Telescope:
 
         self.printInfo(self.Observer.name, qwindow)
         self.printInfo("Latitude: %s\tLongitude: %s" %
-                  (self.Observer.location.latitude,
-                   self.Observer.location.longitude), qwindow)
+                       (self.Observer.location.latitude,
+                        self.Observer.location.longitude), qwindow)
         self.printInfo("Current time is %s" % self.getTime())
 #        self.printInfo("Telescope park location: %s, %s" %
 #                  (self.park.az, self.park.alt))
@@ -87,14 +89,19 @@ class Telescope:
         # check if the coordinates are above the horizon
         if not self.Observer.target_is_up(time, coord):
             self.printInfo("Target RA: %s, Dec: %s is below the horizon." %
-                      (ra, dec), qwindow)
+                           (ra, dec), qwindow)
             return
 
-        self.printInfo("Slewing to RA: %s, Dec: %s..." %(ra, dec), qwindow)
+        self.printInfo("Slewing to RA: %s, Dec: %s..." % (ra, dec), qwindow)
+        qwindow.slewBtn.setText("Stop")
 
+        self.isMoving = True
 #        call to C++ code goes here
 
-        self.printInfo("Finished slewing to RA: %s, Dec: %s." % (ra, dec), qwindow)
+        self.isMoving = False
+        self.printInfo("Finished slewing to RA: %s, Dec: %s." %
+                       (ra, dec), qwindow)
+        qwindow.slewBtn.setText("Slew")
 
     def slewToObject(self, obj, time=None, qwindow=None):
         '''
@@ -183,12 +190,17 @@ class Telescope:
             Name of the file to write to
         '''
 
+        print(type(outFile))
+
         if not outFile:
             outFile = str(datetime.today()) + '.txt'
 
         self.printInfo("Recording to %s" % outFile)
 
-#        call to C++ code goes here
+        while qwindow.recordBtn.isChecked():
+            pass
 
-#        with open(outFile, 'a') as f:
-#            f.write(c++output)
+#           call to C++ code goes here
+
+#           with open(outFile, 'a') as f:
+#                f.write(c++output)

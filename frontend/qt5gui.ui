@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1187</width>
-    <height>829</height>
+    <width>1138</width>
+    <height>819</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,6 +20,12 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QWidget" name="radioSignal" native="true">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="minimumSize">
        <size>
         <width>0</width>
@@ -40,7 +46,130 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <item>
-          <widget class="QListWidget" name="telescopeInfo"/>
+          <widget class="QTableWidget" name="telescopeInfo">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>300</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="editTriggers">
+            <set>QAbstractItemView::NoEditTriggers</set>
+           </property>
+           <property name="alternatingRowColors">
+            <bool>true</bool>
+           </property>
+           <property name="showGrid">
+            <bool>false</bool>
+           </property>
+           <property name="gridStyle">
+            <enum>Qt::DotLine</enum>
+           </property>
+           <property name="sortingEnabled">
+            <bool>false</bool>
+           </property>
+           <property name="rowCount">
+            <number>12</number>
+           </property>
+           <property name="columnCount">
+            <number>2</number>
+           </property>
+           <attribute name="horizontalHeaderVisible">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="horizontalHeaderDefaultSectionSize">
+            <number>130</number>
+           </attribute>
+           <attribute name="horizontalHeaderStretchLastSection">
+            <bool>true</bool>
+           </attribute>
+           <attribute name="verticalHeaderVisible">
+            <bool>false</bool>
+           </attribute>
+           <attribute name="verticalHeaderHighlightSections">
+            <bool>true</bool>
+           </attribute>
+           <row/>
+           <row/>
+           <row/>
+           <row/>
+           <row/>
+           <row/>
+           <row/>
+           <row/>
+           <row/>
+           <row/>
+           <row/>
+           <row/>
+           <column/>
+           <column/>
+           <item row="0" column="0">
+            <property name="text">
+             <string>Location</string>
+            </property>
+           </item>
+           <item row="1" column="0">
+            <property name="text">
+             <string>Latitude</string>
+            </property>
+           </item>
+           <item row="2" column="0">
+            <property name="text">
+             <string>Longitude</string>
+            </property>
+           </item>
+           <item row="3" column="0">
+            <property name="text">
+             <string>Elevation</string>
+            </property>
+           </item>
+           <item row="4" column="0">
+            <property name="text">
+             <string>Date</string>
+            </property>
+           </item>
+           <item row="5" column="0">
+            <property name="text">
+             <string>JD</string>
+            </property>
+           </item>
+           <item row="6" column="0">
+            <property name="text">
+             <string>Time (UT)</string>
+            </property>
+           </item>
+           <item row="7" column="0">
+            <property name="text">
+             <string>Recording filepath</string>
+            </property>
+           </item>
+           <item row="8" column="0">
+            <property name="text">
+             <string>Right Ascension</string>
+            </property>
+           </item>
+           <item row="9" column="0">
+            <property name="text">
+             <string>Declination</string>
+            </property>
+           </item>
+           <item row="10" column="0">
+            <property name="text">
+             <string>Altitude</string>
+            </property>
+           </item>
+           <item row="11" column="0">
+            <property name="text">
+             <string>Azimuth</string>
+            </property>
+           </item>
+          </widget>
          </item>
         </layout>
        </widget>
@@ -53,6 +182,13 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>400</width>
+          <height>400</height>
+         </size>
+        </property>
+        <layout class="QVBoxLayout" name="figvl"/>
        </widget>
       </item>
       <item>
@@ -81,6 +217,25 @@
               <widget class="QLineEdit" name="dec"/>
              </item>
              <item>
+              <widget class="QCheckBox" name="trackBtn">
+               <property name="minimumSize">
+                <size>
+                 <width>67</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="baseSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Track</string>
+               </property>
+              </widget>
+             </item>
+             <item>
               <widget class="QPushButton" name="slewBtn">
                <property name="text">
                 <string>Slew</string>
@@ -92,31 +247,26 @@
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_3">
              <item>
-              <widget class="QCheckBox" name="trackBtn">
-               <property name="text">
-                <string>Track</string>
-               </property>
-              </widget>
+              <widget class="QLineEdit" name="recordPath"/>
              </item>
              <item>
               <widget class="QCheckBox" name="recordBtn">
+               <property name="minimumSize">
+                <size>
+                 <width>67</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="baseSize">
+                <size>
+                 <width>0</width>
+                 <height>0</height>
+                </size>
+               </property>
                <property name="text">
                 <string>Record</string>
                </property>
               </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
              </item>
              <item>
               <widget class="QPushButton" name="parkBtn">
@@ -130,7 +280,20 @@
           </layout>
          </item>
          <item>
-          <widget class="QListWidget" name="commandOutput"/>
+          <widget class="QListWidget" name="commandOutput">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="autoScrollMargin">
+            <number>0</number>
+           </property>
+           <property name="editTriggers">
+            <set>QAbstractItemView::NoEditTriggers</set>
+           </property>
+           <property name="verticalScrollMode">
+            <enum>QAbstractItemView::ScrollPerPixel</enum>
+           </property>
+          </widget>
          </item>
         </layout>
        </widget>
